@@ -1,4 +1,5 @@
 import classes from './Button.module.css';
+import {tokens} from '@/themes/tokens';
 
 export function EuidButton({ mode, children, ...restProps }) {
   return (
