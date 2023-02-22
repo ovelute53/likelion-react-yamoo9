@@ -4,6 +4,7 @@
 }
 
 .component svg {
+  pointer-events: none;
 }
 
 .component:disabled {

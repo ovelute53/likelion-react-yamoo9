@@ -1,18 +1,18 @@
-import './App.css'
-import { Button } from './components'
+import './App.css';
+import { Button } from './components';
 
 function App() {
-  handleClick = () => {
-    e.target
-  }
+  const handleClick = (e) => {
+    console.log(e.target);
+  };
 
   return (
     <div className="App">
-      <h2>Button component ( stateless )</h2>
-      <Button onClick={handleClick}>Primary button</Button>
-      <Button onClick={handleClick}>Secondary button</Button>
+      <h2>Button 컴포넌트(stateless)</h2>
+      <Button onClick={handleClick}>Primary Button</Button>
+      <Button onClick={handleClick}>Secondary Button</Button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
