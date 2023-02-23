@@ -9,11 +9,27 @@ function App() {
       <div role="group" className={classes.buttonGroup}>
         <Button>회원가입</Button>
         <Button secondary>로그인</Button>
-
-        <A11yHidden as="h2">저장</A11yHidden>
-        <A11yHidden as="a">저장</A11yHidden>
-        <A11yHidden as="figcaption">저장</A11yHidden>
       </div>
+      <section>
+        <A11yHidden 
+          as="h2" 
+          className="myClassName"
+          id= "uniqueId"
+          title= "titleName"
+          data-myName= "saehan"
+        >
+          접근성 준수 제목
+        </A11yHidden>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A id nisi vero quibusdam vitae sequi aperiam vel accusamus, iusto eaque, ullam, temporibus delectus debitis consequatur eos aspernatur? Quo, optio fugiat.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A id nisi vero quibusdam vitae sequi aperiam vel accusamus, iusto eaque, ullam, temporibus delectus debitis consequatur eos aspernatur? Quo, optio fugiat.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A id nisi vero quibusdam vitae sequi aperiam vel accusamus, iusto eaque, ullam, temporibus delectus debitis consequatur eos aspernatur? Quo, optio fugiat.
+        </p>
+      </section>
     </div>
   );
 }
