@@ -1,3 +1,4 @@
+// atomic component 원자 컴포넌트
 import classes from './A11yHidden.module.css';
 
 export const A11yHidden = ({
@@ -9,7 +10,7 @@ export const A11yHidden = ({
   // 변수(문자값) + '' + 변수(문자값)
   // => `${개발자의 클래스이름}${사용자의 클래스이름}` 
   // 공백 제거를 위해 trim() 메서드를 이용하였다
-  const combineClassNames = `${classes.srOnly} ${className}`.trim();
+  const combineClassNames = `${classes.srOnly} ${focusable ? classes.focusable : ''} ${className}`.trim();
   return (
     <Component 
       className={combineClassNames} 
