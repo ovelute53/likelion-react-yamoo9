@@ -1,4 +1,4 @@
-import classes from '@/styles/SignUp.module.scss';
+import classes from '@/styles/SignUp.module.Wcss';
 import { BaseLayout } from '@/components';
 
 export default function SignUp() {
