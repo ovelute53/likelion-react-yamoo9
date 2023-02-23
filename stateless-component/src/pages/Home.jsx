@@ -1,46 +1,48 @@
-// page component ( 무조건 export default 사용 )
-// code splitting : React.lazy()
-import React, {useState} from 'react';}
-import classes from '@/styles/Home.moudle.scss';
-import { A11yHidden, Button, Nav, SkipToContent } from '../components';
+import { useState } from 'react';
+import classes from '@/styles/Home.module.css';
+import {
+  SkipToContent,
+  Nav,
+  Button,
+  A11yHidden,
+  BaseLayout,
+} from '@/components';
 
 export default function Home() {
-    const [navList] = useState([
-      {id: 'item-1', text:'과자', to: '#snack'},
-      {id: 'item-2', text:'호박', to: '#pumpkin'},
-      {id: 'item-3', text:'아이스크림', to: '#icecream'},
-      {id: 'item-4', text:'뺑오쇼콜라', to: '#bread'},
-      {id: 'item-5', text:'치킨', to: '#chicken'},
-    ])
-    return (
+  const [navList] = useState([
+    { id: 'item-1', text: '과자', to: '#snack' },
+    { id: 'item-2', text: '호박', to: '#pumpkin' },
+    { id: 'item-3', text: '아이스크림', to: '#icecream' },
+    { id: 'item-4', text: '수박', to: '#watermelon' },
+    { id: 'item-5', text: '치킨', to: '#chicken' },
+  ]);
+
+  return (
+    <BaseLayout>
       <div className={classes.container}>
         <SkipToContent to="#snack">과자</SkipToContent>
         <SkipToContent to="#pumpkin">호박</SkipToContent>
         <SkipToContent to="#icecream">아이스크림</SkipToContent>
-  
-        <Nav
-         as="h3"
-         headline="상품 목록"
-         list = {navList}
-         />
+
+        <Nav as="h3" headline="상품 목록" list={navList} />
+
         <h2 className={classes.headline}>Button 컴포넌트(stateless)</h2>
-  
+
         <div role="group" className={classes.buttonGroup}>
           <Button>회원가입</Button>
           <Button secondary>로그인</Button>
         </div>
+
         <section id="snack">
-          <A11yHidden as="h2" focusable>
-            맛있는 과자~
-          </A11yHidden>
+          <h2>과자</h2>
           <p>
             <A11yHidden as="a" href="#invisible" focusable>
               Lorem ipsum
             </A11yHidden>
             <a href="#dolor">dolor</a>, sit amet consectetur adipisicing elit.
-            Quis suscipit ratione maxime velit, distinctio cupiditate dignissimos
-            fugit culpa, necessitatibus, quidem obcaecati perspiciatis veritatis.
-            Atque quidem sed nisi maxime aliquid eos.
+            Quis suscipit ratione maxime velit, distinctio cupiditate
+            dignissimos fugit culpa, necessitatibus, quidem obcaecati
+            perspiciatis veritatis. Atque quidem sed nisi maxime aliquid eos.
           </p>
           <p>
             Dolorem adipisci nihil et vitae possimus ipsa dolorum voluptates
@@ -49,21 +51,109 @@ export default function Home() {
             fugiat voluptatibus accusantium tempore accusamus nisi. Culpa?
           </p>
           <p>
-            Expedita, rerum. Voluptatem impedit nisi numquam dolorum ad unde, quis
-            illum odio voluptatibus eveniet tempora explicabo distinctio aliquid
-            vel ullam beatae quos neque laudantium esse voluptatum minima deleniti
-            voluptate. Libero.
+            Expedita, rerum. Voluptatem impedit nisi numquam dolorum ad unde,
+            quis illum odio voluptatibus eveniet tempora explicabo distinctio
+            aliquid vel ullam beatae quos neque laudantium esse voluptatum
+            minima deleniti voluptate. Libero.
           </p>
           <p>
-            Quam ipsam repellendus magnam repellat cumque. Dolores sit, quisquam a
-            ex error eos. Ducimus pariatur eaque officiis, debitis quo inventore
-            doloremque fugit iste rem necessitatibus! A possimus quidem quae nam?
+            Quam ipsam repellendus magnam repellat cumque. Dolores sit, quisquam
+            a ex error eos. Ducimus pariatur eaque officiis, debitis quo
+            inventore doloremque fugit iste rem necessitatibus! A possimus
+            quidem quae nam?
           </p>
           <p>
             Saepe nisi sit odio sapiente obcaecati recusandae perspiciatis eos
             quis architecto blanditiis dicta quae mollitia culpa, suscipit esse
-            molestiae, dolore veniam fugit ex vero ipsum fugiat hic aperiam. Vero,
-            ullam!
+            molestiae, dolore veniam fugit ex vero ipsum fugiat hic aperiam.
+            Vero, ullam!
+          </p>
+          <p>
+            Cumque similique unde quos sequi nulla? Placeat aperiam blanditiis
+            doloribus excepturi iste obcaecati voluptatem, optio repellendus
+            quidem sint, assumenda quisquam provident ab dolore ex eaque. Id,
+            repudiandae. Corrupti, adipisci unde.
+          </p>
+        </section>
+        <section id="pumpkin">
+          <h2>호박</h2>
+          <p>
+            <A11yHidden as="a" href="#invisible" focusable>
+              Lorem ipsum
+            </A11yHidden>
+            <a href="#dolor">dolor</a>, sit amet consectetur adipisicing elit.
+            Quis suscipit ratione maxime velit, distinctio cupiditate
+            dignissimos fugit culpa, necessitatibus, quidem obcaecati
+            perspiciatis veritatis. Atque quidem sed nisi maxime aliquid eos.
+          </p>
+          <p>
+            Dolorem adipisci nihil et vitae possimus ipsa dolorum voluptates
+            exercitationem nemo aperiam deserunt dolor aspernatur, nostrum
+            expedita temporibus veniam, suscipit recusandae sint necessitatibus
+            fugiat voluptatibus accusantium tempore accusamus nisi. Culpa?
+          </p>
+          <p>
+            Expedita, rerum. Voluptatem impedit nisi numquam dolorum ad unde,
+            quis illum odio voluptatibus eveniet tempora explicabo distinctio
+            aliquid vel ullam beatae quos neque laudantium esse voluptatum
+            minima deleniti voluptate. Libero.
+          </p>
+          <p>
+            Quam ipsam repellendus magnam repellat cumque. Dolores sit, quisquam
+            a ex error eos. Ducimus pariatur eaque officiis, debitis quo
+            inventore doloremque fugit iste rem necessitatibus! A possimus
+            quidem quae nam?
+          </p>
+          <p>
+            Saepe nisi sit odio sapiente obcaecati recusandae perspiciatis eos
+            quis architecto blanditiis dicta quae mollitia culpa, suscipit esse
+            molestiae, dolore veniam fugit ex vero ipsum fugiat hic aperiam.
+            Vero, ullam!
+          </p>
+          <p>
+            Cumque similique unde quos sequi nulla? Placeat aperiam blanditiis
+            doloribus excepturi iste obcaecati voluptatem, optio repellendus
+            quidem sint, assumenda quisquam provident ab dolore ex eaque. Id,
+            repudiandae. Corrupti, adipisci unde.
+          </p>
+        </section>
+        <section id="icecream">
+          <A11yHidden as="h2" focusable>
+            맛있는 과자~
+          </A11yHidden>
+          <strong>아이스크림</strong>
+          <p>
+            <A11yHidden as="a" href="#invisible" focusable>
+              Lorem ipsum
+            </A11yHidden>
+            <a href="#dolor">dolor</a>, sit amet consectetur adipisicing elit.
+            Quis suscipit ratione maxime velit, distinctio cupiditate
+            dignissimos fugit culpa, necessitatibus, quidem obcaecati
+            perspiciatis veritatis. Atque quidem sed nisi maxime aliquid eos.
+          </p>
+          <p>
+            Dolorem adipisci nihil et vitae possimus ipsa dolorum voluptates
+            exercitationem nemo aperiam deserunt dolor aspernatur, nostrum
+            expedita temporibus veniam, suscipit recusandae sint necessitatibus
+            fugiat voluptatibus accusantium tempore accusamus nisi. Culpa?
+          </p>
+          <p>
+            Expedita, rerum. Voluptatem impedit nisi numquam dolorum ad unde,
+            quis illum odio voluptatibus eveniet tempora explicabo distinctio
+            aliquid vel ullam beatae quos neque laudantium esse voluptatum
+            minima deleniti voluptate. Libero.
+          </p>
+          <p>
+            Quam ipsam repellendus magnam repellat cumque. Dolores sit, quisquam
+            a ex error eos. Ducimus pariatur eaque officiis, debitis quo
+            inventore doloremque fugit iste rem necessitatibus! A possimus
+            quidem quae nam?
+          </p>
+          <p>
+            Saepe nisi sit odio sapiente obcaecati recusandae perspiciatis eos
+            quis architecto blanditiis dicta quae mollitia culpa, suscipit esse
+            molestiae, dolore veniam fugit ex vero ipsum fugiat hic aperiam.
+            Vero, ullam!
           </p>
           <p>
             Cumque similique unde quos sequi nulla? Placeat aperiam blanditiis
@@ -73,5 +163,6 @@ export default function Home() {
           </p>
         </section>
       </div>
-    );
+    </BaseLayout>
+  );
 }

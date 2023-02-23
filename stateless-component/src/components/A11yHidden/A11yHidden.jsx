@@ -2,31 +2,22 @@
 import { forwardRef } from 'react' // 고차 컴포넌트 전달
 import classes from './A11yHidden.module.css';
 
-export const A11yHidden = forwardRef
-  (function A11yHidden(
-  {
-   as: Component='span',
-   focusable=false,
-   className='',
-   ...restProps 
-   // rest parameters: {className, id, title, 'data-myName', children}
-  },
+export const A11yHidden = forwardRef(function A11yHidden(
+  /* props */
+  // rest parameters: {className, id, title, 'data-myName', children}
+  { as: Component = 'span', focusable = false, className = '', ...restProps },
   /* ref (forwarding) */
   ref
-  ){
+) {
   /* 변수(문자값) + '' + 변수(문자값)
    => `${개발자의 클래스이름}${사용자의 클래스이름}` 
    공백 제거를 위해 trim() 메서드를 이용하였다 */
-  const combineClassNames = `${classes.srOnly} ${focusable ? classes.focusable : ''} ${className}`.trim();
-  return (
-    <Component
-      ref = {ref} 
-      className={combineClassNames} 
-      {...restProps} // spread operator: {className, id, title, 'data-myName', children}
-    />
-  );
-});
+  const combinedClassNames = `${classes.srOnly} ${
+    focusable ? classes.focusable : ''
+  } ${className}`.trim();
 
+  return <Component ref={ref} className={combinedClassNames} {...restProps} />;
+});
 
 // A11yHidden.displayName = 'saehan';
 
@@ -37,3 +28,5 @@ export const A11yHidden = forwardRef
 //   className: '',
 //   focusable: false,
 // };
+
+export const srOnlyClassName = classes.srOnly;
