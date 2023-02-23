@@ -18,7 +18,8 @@ export const A11yHidden = ({
   );
 };
 
-
+// props (외부에서 전달되는 함수의 인자 집합)
+// 함수 내부에서는 기본 값 설정
 // A11yHidden.defaultProps = {
-//   as: 'span'
-// }
+//   as: 'span',
+// };
