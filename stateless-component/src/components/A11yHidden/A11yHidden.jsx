@@ -1,28 +1,39 @@
 // atomic component 원자 컴포넌트
+import { forwardRef } from 'react' // 고차 컴포넌트 전달
 import classes from './A11yHidden.module.css';
 
-export const A11yHidden = ({
-   as: Component,
-   focusable,
-   className,
-   ...restProps // rest parameters: {className, id, title, 'data-myName', children}
-  }) => {
-  // 변수(문자값) + '' + 변수(문자값)
-  // => `${개발자의 클래스이름}${사용자의 클래스이름}` 
-  // 공백 제거를 위해 trim() 메서드를 이용하였다
+export const A11yHidden = forwardRef
+  (function A11yHidden(
+  {
+   as: Component='span',
+   focusable=false,
+   className='',
+   ...restProps 
+   // rest parameters: {className, id, title, 'data-myName', children}
+  },
+  /* ref (forwarding) */
+  ref
+  ){
+  /* 변수(문자값) + '' + 변수(문자값)
+   => `${개발자의 클래스이름}${사용자의 클래스이름}` 
+   공백 제거를 위해 trim() 메서드를 이용하였다 */
   const combineClassNames = `${classes.srOnly} ${focusable ? classes.focusable : ''} ${className}`.trim();
   return (
-    <Component 
+    <Component
+      ref = {ref} 
       className={combineClassNames} 
       {...restProps} // spread operator: {className, id, title, 'data-myName', children}
     />
   );
-};
+});
+
+
+// A11yHidden.displayName = 'saehan';
 
 // props (외부에서 전달되는 함수의 인자 집합)
 // 함수 내부에서는 기본 값 설정
-A11yHidden.defaultProps = {
-  as: 'span',
-  className: '',
-  focusable: false,
-};
+// A11yHidden.defaultProps = {
+//   as: 'span',
+//   className: '',
+//   focusable: false,
+// };
