@@ -25,18 +25,18 @@ function App() {
         <Button>회원가입</Button>
         <Button secondary>로그인</Button>
       </div>
-      <section>
-        <A11yHidden as="h2" focusable tabIndex={0}>
-          접근성 준수한 제목
-          </A11yHidden>
+      <section id="snack">
+        <A11yHidden as="h2" focusable>
+          맛있는 과자~
+        </A11yHidden>
         <p>
           <A11yHidden as="a" href="#invisible" focusable>
             Lorem ipsum
-          </A11yHidden>{' '}
-          <a href="">dolor</a>, sit amet consectetur adipisicing
-          elit. Quis suscipit ratione maxime velit, distinctio cupiditate
-          dignissimos fugit culpa, necessitatibus, quidem obcaecati perspiciatis
-          veritatis. Atque quidem sed nisi maxime aliquid eos.
+          </A11yHidden>
+          <a href="#dolor">dolor</a>, sit amet consectetur adipisicing elit.
+          Quis suscipit ratione maxime velit, distinctio cupiditate dignissimos
+          fugit culpa, necessitatibus, quidem obcaecati perspiciatis veritatis.
+          Atque quidem sed nisi maxime aliquid eos.
         </p>
         <p>
           Dolorem adipisci nihil et vitae possimus ipsa dolorum voluptates
